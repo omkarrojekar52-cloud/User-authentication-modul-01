@@ -72,4 +72,6 @@ def logout():
     return redirect("/login")
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    from os import getenv
+    port = int(getenv("PORT", 5000))
+    app.run(host="0.0.0.0", port=port)
